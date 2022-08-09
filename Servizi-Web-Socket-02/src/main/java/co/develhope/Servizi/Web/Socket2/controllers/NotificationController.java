@@ -20,7 +20,7 @@ public class NotificationController {
 
     @PostMapping("/broadcast-message")
     public ResponseEntity sendNotificationToClients(@RequestBody MessageDTO message){
-        simpMessagingTemplate.convertAndSend("/topic/messages",message);
+        simpMessagingTemplate.convertAndSend("/topic/broadcast",message);
         return  ResponseEntity.status(HttpStatus.OK).build();
     }
 
